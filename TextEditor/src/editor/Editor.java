@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -16,7 +17,13 @@ import javax.swing.JTextArea;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class Editor extends JFrame{
+public class Editor extends JFrame implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private JTextArea textArea = new JTextArea(20,60);
 	private JFileChooser fc = new JFileChooser();
 	public Editor() {
@@ -41,6 +48,7 @@ public class Editor extends JFrame{
 	}
 	
 	Action Open = new AbstractAction("Open File") {
+		private static final long serialVersionUID = 1L;
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -51,6 +59,7 @@ public class Editor extends JFrame{
 	};
 	
 	Action Save = new AbstractAction("Save File") {
+		private static final long serialVersionUID = 1L;
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -59,6 +68,7 @@ public class Editor extends JFrame{
 	};
 	
 	Action Exit = new AbstractAction("Exit") {
+		private static final long serialVersionUID = 1L;
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
